@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        
+    </head>
+    <body draggable="false">
+        <noscript><marquee>u gey</marquee></noscript>
+        <title>HDXR EDITOR</title>
+        <style>
+            textarea {
+                font-family:  "Segoe UI", "KaiTi", "????", serif;
+                font-size: 22px;
+            }
+        </style>
+        <script>function staf() {
+                var textToWrite = document.getElementById('edit1').value;
+                var textFileAsBlob = new Blob([textToWrite], { type: 'text/plain' });
+                var fileNameToSaveAs = "_HDXR1.txt";
+
+                var downloadLink = document.createElement("a");
+                downloadLink.download = fileNameToSaveAs;
+                downloadLink.innerHTML = "Download File";
+                if (window.webkitURL != null) {
+                    // Chrome allows the link to be clicked without actually adding it to the DOM.
+                    downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+                } else {
+                    // Firefox requires the link to be added to the DOM before it can be clicked.
+                    downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+                    downloadLink.onclick = destroyClickedElement;
+                    downloadLink.style.display = "none";
+                    document.body.appendChild(downloadLink);
+                }
+
+                downloadLink.click();
+            }
+            /*
+            var button = document.getElementById('upd');
+            button.addEventListener('click', saveTextAsFile);
+            */
+            function destroyClickedElement(event) {
+                // remove the link from the DOM
+                document.body.removeChild(event.target);
+            }
+            function staf2() {
+                var textToWrite = document.getElementById('edit2').value;
+                var textFileAsBlob = new Blob([textToWrite], { type: 'text/plain' });
+                var fileNameToSaveAs = "_HDXR2.txt";
+
+                var downloadLink = document.createElement("a");
+                downloadLink.download = fileNameToSaveAs;
+                downloadLink.innerHTML = "Download File";
+                if (window.webkitURL != null) {
+                    // Chrome allows the link to be clicked without actually adding it to the DOM.
+                    downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+                } else {
+                    // Firefox requires the link to be added to the DOM before it can be clicked.
+                    downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+                    downloadLink.onclick = destroyClickedElement;
+                    downloadLink.style.display = "none";
+                    document.body.appendChild(downloadLink);
+                }
+
+                downloadLink.click();
+            }
+            /*
+            var button = document.getElementById('updf');
+            button.addEventListener('click', saveTextAsFile);
+            */
+            function destroyClickedElement(event) {
+                // remove the link from the DOM
+                document.body.removeChild(event.target);
+            }
+        </script>
+        <textarea id="edit1" rows="8" draggable="false"></textarea>
+        <marquee direction="up" scrollamount="16" height="16" draggable="true" onclick="staf()" id="upd"><marquee scrollamount="16" direction="dOwn">Save File</marquee></marquee>
+    </body>
+</html>
