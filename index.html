@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+	<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAwAAAAMAAQAAAAC7+j0jAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAnRSTlMAAHaTzTgAAAACYktHRAAB3YoTpAAAAAd0SU1FB+MIAxcFMtIIN5MAAABfSURBVHja7cEBDQAAAMKg909tDjegAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvg0jDwABnonulgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxOS0wOC0wM1QyMzowNTo1MCswMDowMAYW2TsAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTktMDgtMDNUMjM6MDU6NTArMDA6MDB3S2GHAAAAAElFTkSuQmCC" />
+	<TITLE>Query</TITLE>
+	<style>
+		*{ background-color: #333333}
+		.p{color: #EEEEEE; font-family:'Courier New', Courier, monospace; font-size: 32px;}
+	</style>
+	<script>
+		function v(){
+				var i = document.getElementById("search-field").value;
+				i.replace(/\+/g,' ')
+				var go = "https://bing.com/search?q="+i;
+				window.open(go, "_self");
+		}
+		function w(width, height){
+			var i = document.getElementById("search-field").value;
+				i.replace(/\+/g,' ')
+				var go = "https://bing.com/search?q="+i;
+			var leftPosition, topPosition;
+			leftPosition = (window.screen.width / 2) - ((width / 2) + 10);
+			topPosition = (window.screen.height / 2) - ((height / 2) + 50);
+			window.open(go, "Query", "status=no,height=" + height + ",width=" + width + ",resizable=yes,left=" + leftPosition + ",top=" + topPosition + ",screenX=" + leftPosition + ",screenY=" + topPosition + ",toolbar=no,menubar=no,scrollbars=no,location=no,directories=no");
+		}
+		function l(width, height){
+					var leftPosition, topPosition;
+			leftPosition = (window.screen.width / 2) - ((width / 2) + 10);
+			topPosition = (window.screen.height / 2) - ((height / 2) + 50);
+			window.open(this.location, "Query", "status=no,height=" + height + ",width=" + width + ",resizable=yes,left=" + leftPosition + ",top=" + topPosition + ",screenX=" + leftPosition + ",screenY=" + topPosition + ",toolbar=no,menubar=no,scrollbars=no,location=no,directories=no");
+			this.close()
+		}
+	</script>
+</HEAD>
+<BODY>
+	<center>
+	<input id="search-field" style="font-size:32" size="32" type="search" class="p">
+	<input type="button" onclick="v()" value="Search" class="p"><br><br>
+	<input type="button" onclick="w()" value="Search in up tab" class="p"><br><br>
+	<input type="button" onclick="l()" value="Isolate in up tab" class="p">
+	</center>
+</BODY>
+</HTML>
