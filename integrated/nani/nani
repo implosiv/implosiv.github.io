@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html onclick="rfs.call(el);">
+    <head>
+        
+    </head>
+    <body>
+    <title>
+            お前はもう死んでいる。 
+        </title>
+        <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/No_image.svg/1024px-No_image.svg.png">
+        <style>
+            * {background-color:black; text-align: center; font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; cursor:none}
+            .diffing {color:white;}
+            * {
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+        </style>
+        <script type="text/javascript">
+            document.addEventListener('contextmenu', event => event.preventDefault());
+        </script>
+        <script language="javascript">
+            var cInit = 0;
+        </script>
+        <SCRIPT LANGUAGE="JAVASCRIPT">
+            function UpdateTitle()
+            {
+                cInit++
+                document.title = document.Ein.WindowTitle.value + cInit;
+            };
+        </SCRIPT>
+        <FORM name="Ein">
+            <div NAME=WindowTitle>お前はもう死んでいる。</div>
+        </FORM>
+		<div id="nodeetabupdate-- お前はもう死んでいる。 --dbreload-- --broad-- --banddefinition-- --init-- --per-- --userinit-- --fonttextload-latin-char8_t-- --fonttextload-chinese-char16_t-- --fonttextcompatiblize-japanese-char16_t-- --intricatabapalizeenquiry-- --enquiry-- --acknowledgements-- --curvature-- --escapecurvature--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			<div id="delframe--">
+			 
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+		</div>
+        <script type="text/javascript">
+            var el = document.documentElement
+                , rfs = // for newer Webkit and Firefox
+                    el.requestFullscreen
+                    || el.webkitRequestFullScreen
+                    || el.mozRequestFullScreen
+                    || el.msRequestFullscreen
+            ;
+            if(typeof window.ActiveXObject!="undefined"){
+            // for Internet Explorer
+            var wscript = new ActiveXObject("WScript.Shell");
+            if (wscript!=null) {
+                wscript.SendKeys("{F11}");
+            }
+            }
+        </script> 
+		<div id="nodelframe--">
+        <font size="72" class="diffing">
+            <p>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+            </p>
+            お前はもう死んでいる。
+        </font>
+		</div>
+    </body>
+</html>
