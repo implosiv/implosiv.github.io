@@ -1,8 +1,553 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-  </head>
-  <body>
-    
-  </body>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title></title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix foreignobject { font-size: var(--mermaid-font-zoom); }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+ :root {--mermaid-font-zoom:2.1em ;} 
+</style>
+</head>
+<body class='typora-export os-windows'>
+<div id='write'  class=''><p><strong><span>STARTSTACK</span></strong></p><hr /><p><a href='https://baike.so.com/'><span>360百科</span></a></p><h1><a name="清明上河图---北宋张择端风俗画" class="md-header-anchor"></a><span>清明上河图 - 北宋张择端风俗画</span></h1><p><span>所属类别 :</span></p><p><span>文化遗产</span></p><p><span>清明上河图，</span><a href='https://baike.so.com/doc/318549-337275.html'><span>中国十大传世名画</span></a><span>之一。为北宋</span><a href='https://baike.so.com/doc/1245760-1317499.html'><span>风俗画</span></a><span>，北宋画家</span><a href='https://baike.so.com/doc/2786460-2941075.html'><span>张择端</span></a><span>仅见的存世精品，属</span><a href='https://baike.so.com/doc/6432878-6646555.html'><span>国宝级文物</span></a><span>，现藏于</span><a href='https://baike.so.com/doc/5335838-5571277.html'><span>北京故宫博物院</span></a><span>。</span></p><p><span>清明上河图宽24.8厘米、长528.7厘米 ，绢本</span><a href='https://baike.so.com/doc/335795-355650.html'><span>设色</span></a><span>。作品以</span><a href='https://baike.so.com/doc/5606250-5818859.html'><span>长卷</span></a><span>形式，采用</span><a href='https://baike.so.com/doc/1448158-1530860.html'><span>散点透视</span></a><span>构图法，生动记录了中国十二世纪</span><a href='https://baike.so.com/doc/5382395-5618750.html'><span>北宋</span></a><span>都城东京(又称</span><a href='https://baike.so.com/doc/1952948-2066695.html'><span>汴京</span></a><span>，今河南</span><a href='https://baike.so.com/doc/1952948-2066695.html'><span>开封</span></a><span>)的城市面貌和当时社会各阶层人民的生活状况，是北宋时期都城汴京当年繁荣的见证，也是北宋城市经济情况的写照。</span></p><p><span>这在中国乃至世界绘画史上都是独一无二的。在五米多长的画卷里，共绘了数量庞大的各色人物，牛、骡、驴等牲畜，车、轿、大小船只，房屋、桥梁、</span><a href='https://baike.so.com/doc/3321428-3498287.html'><span>城楼</span></a><span>等各有特色，体现了宋代建筑的特征。具有很高的历史价值和艺术价值。</span></p><p>&nbsp;</p><h2><a name="基本信息" class="md-header-anchor"></a><span>基本信息</span></h2><figure><table><thead><tr><th><span>中文名称</span></th><th><span>清明上河图</span></th></tr></thead><tbody><tr><td><span>外文名称</span></td><td><span>Along the River During the Qingming Festival</span></td></tr><tr><td><span>年代</span></td><td><a href='https://baike.so.com/doc/5382395-5618750.html'><span>北宋</span></a></td></tr><tr><td><span>作者</span></td><td><a href='https://baike.so.com/doc/2786460-2941075.html'><span>张择端</span></a></td></tr><tr><td><span>描绘地点</span></td><td><span>东京(又称汴京，今河南开封)</span></td></tr><tr><td><span>地位</span></td><td><span>中国十大传世名画之一</span></td></tr><tr><td><span>馆藏点</span></td><td><span>北京故宫博物院，杭州宋城电子版</span></td></tr><tr><td><span>规格</span></td><td><span>宽24.8厘米，长528.7厘米</span></td></tr></tbody></table></figure><p>&nbsp;</p><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n644"><a class="md-toc-inner" href="#清明上河图---北宋张择端风俗画">清明上河图 - 北宋张择端风俗画</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n651"><a class="md-toc-inner" href="#基本信息">基本信息</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n691"><a class="md-toc-inner" href="#折叠httpsbaikesocomdoc5366651-5602376html编辑本段httpsbaikesocomcreateediteid5366651sid5602376secid1构图">折叠编辑本段<strong>构图</strong></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n694"><a class="md-toc-inner" href="#折叠httpsbaikesocomdoc5366651-5602376html郊外">折叠<strong>郊外</strong></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n703"><a class="md-toc-inner" href="#折叠httpsbaikesocomdoc5366651-5602376html汴河">折叠<strong>汴河</strong></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n711"><a class="md-toc-inner" href="#折叠httpsbaikesocomdoc5366651-5602376html街市">折叠<strong>街市</strong></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n718"><a class="md-toc-inner" href="#折叠httpsbaikesocomdoc5366651-5602376html曲谏">折叠<strong>曲谏</strong></a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n727"><a class="md-toc-inner" href="#折叠httpsbaikesocomdoc5366651-5602376html编辑本段httpsbaikesocomcreateediteid5366651sid5602376secid2鉴赏">折叠编辑本段<strong>鉴赏</strong></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n729"><a class="md-toc-inner" href="#折叠httpsbaikesocomdoc5366651-5602376html内容">折叠<strong>内容</strong></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n732"><a class="md-toc-inner" href="#折叠httpsbaikesocomdoc5366651-5602376html结构">折叠<strong>结构</strong></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n734"><a class="md-toc-inner" href="#折叠httpsbaikesocomdoc5366651-5602376html技法">折叠<strong>技法</strong></a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n736"><a class="md-toc-inner" href="#折叠httpsbaikesocomdoc5366651-5602376html编辑本段httpsbaikesocomcreateediteid5366651sid5602376secid3流传历史">折叠编辑本段<strong>流传历史</strong></a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n756"><a class="md-toc-inner" href="#折叠httpsbaikesocomdoc5366651-5602376html编辑本段httpsbaikesocomcreateediteid5366651sid5602376secid4版本">折叠编辑本段<strong>版本</strong></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n758"><a class="md-toc-inner" href="#折叠httpsbaikesocomdoc5366651-5602376html宋本">折叠<strong>宋本</strong></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n761"><a class="md-toc-inner" href="#折叠httpsbaikesocomdoc5366651-5602376html明本">折叠<strong>明本</strong></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n763"><a class="md-toc-inner" href="#折叠httpsbaikesocomdoc5366651-5602376html清院本">折叠<strong>清院本</strong></a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n765"><a class="md-toc-inner" href="#折叠httpsbaikesocomdoc5366651-5602376html编辑本段httpsbaikesocomcreateediteid5366651sid5602376secid5后世评价">折叠编辑本段<strong>后世评价</strong></a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n771"><a class="md-toc-inner" href="#折叠httpsbaikesocomdoc5366651-5602376html编辑本段httpsbaikesocomcreateediteid5366651sid5602376secid6画作之谜">折叠编辑本段<strong>画作之谜</strong></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n772"><a class="md-toc-inner" href="#折叠httpsbaikesocomdoc5366651-5602376html秋景之说">折叠<strong>秋景之说</strong></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n784"><a class="md-toc-inner" href="#折叠httpsbaikesocomdoc5366651-5602376html颂辞之说">折叠<strong>颂辞之说</strong></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n786"><a class="md-toc-inner" href="#折叠httpsbaikesocomdoc5366651-5602376html真伪之说">折叠<strong>真伪之说</strong></a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n788"><a class="md-toc-inner" href="#折叠httpsbaikesocomdoc5366651-5602376html含义之谜">折叠<strong>含义之谜</strong></a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n797"><a class="md-toc-inner" href="#折叠httpsbaikesocomdoc5366651-5602376html编辑本段httpsbaikesocomcreateediteid5366651sid5602376secid7重要展览">折叠编辑本段<strong>重要展览</strong></a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n799"><a class="md-toc-inner" href="#折叠httpsbaikesocomdoc5366651-5602376html编辑本段httpsbaikesocomcreateediteid5366651sid5602376secid8作者简介">折叠编辑本段<strong>作者简介</strong></a></span></p></div><h2><a name="折叠httpsbaikesocomdoc5366651-5602376html编辑本段httpsbaikesocomcreateediteid5366651sid5602376secid1构图" class="md-header-anchor"></a><a href='https://baike.so.com/doc/5366651-5602376.html#'><span>折叠</span></a><a href='https://baike.so.com/create/edit/?eid=5366651&amp;sid=5602376&amp;secid=1'><span>编辑本段</span></a><strong><span>构图</span></strong></h2><p><span>《清明上河图》描绘了北宋时期都城东京(今河南开封)的状况，主要是</span><a href='https://baike.so.com/doc/1952948-2066695.html'><span>汴京</span></a><span>以及汴河两岸的自然风光和繁荣景象。</span></p><p><span>清明上河是当时的民间风俗，像今天的节日集会，人们藉以参加商贸活动。全图大致分为汴京郊外春光、汴河场景、城内街市三部分。</span></p><h3><a name="折叠httpsbaikesocomdoc5366651-5602376html郊外" class="md-header-anchor"></a><a href='https://baike.so.com/doc/5366651-5602376.html#'><span>折叠</span></a><strong><span>郊外</span></strong></h3><p><span>轻轻打开此图，见小溪旁边的大路上一溜骆驼队，远远的从东北方向汴京城走来、五匹毛驴 负重累累，前面的马夫把领头的牲畜赶向拐弯处的桥上，后面的驮夫用马鞭把驮队驱赶向前，目的地快要到了，从驮工熟练的驾驿着驮队的神情就知道他们是行走多年的老马帮了。</span></p><p><span>小桥旁一只</span><a href='https://baike.so.com/doc/24329954-25136382.html'><span>小舢板</span></a><span>栓在</span><a href='https://baike.so.com/doc/1241544-1313098.html'><span>树蔸</span></a><span>上，几户农家小院错落有序地分布在树丛中，几棵高树枝上有四个鸦雀窝，看起来与鸦雀筑窝方式与高度别无二致。打麦场上有几个石碾子，是用于秋收时脱粒用的，此时还闲置在那里。羊圈里有几只羊，羊圈旁边似乎是鸡鸭圈，仿佛圈里饲养了很大一群鸡鸭，好一幅恬静的乡村图景，不由得惊叹一千多年前的宋代有如上此发达的农业和养殖业。</span></p><p><span>再看过来的画面已是农业与商贸的接合部，右上面是一队接亲娶妻的队伍，徐徐的从北边拐过来，后面的新郎官骑着一匹枣红马，马后面是一位挑着新娘嫁妆的脚夫、马前一人抱着新娘的梳妆物品盒，前面一乘轿子应是新娘坐的，因为轿子的处面都用各种草木花卉装饰着，此可谓&quot;花轿&quot;;花轿一词既新娘出嫁时乘坐的交通工具就来源此民风民俗吧。轿子后面一挑夫挑着一担鱼肉、表示女方娘家祝福夫婿富贵有鱼(余)。</span></p><p><span>从</span><a href='https://baike.so.com/doc/5352830-5588288.html'><span>朱元璋</span></a><span>时期开始，清明扫墓开始盛行。因此单凭</span><a href='https://baike.so.com/doc/23639976-24411064.html'><span>清明</span></a><span>二字，就说这支队伍是扫墓归来是不妥的，应是接亲娶妻活动的队伍。</span></p><p><span>茶馆边的一家农舍饲养着两头牛，虽然就在附近发生了一件如此惊天动地的大事、但两头牛却无动于衷，它们还是悠哉游哉的反刍着，远处田里的禾苗正在茁壮成长，农夫正在为禾苗浇水施肥。</span></p><p><span>南边一家两口出行，雇佣了两头牲口及驮夫，还有一个脚夫挑着他俩出行所需物品徐徐向东南方向走去。</span></p><p><span>茶馆前街道正对面一个酒店，由于不经营早点所以才迟迟的撑起招揽顾客的旗幡，酒店开在散装货运码头，生意自然很兴隆，只是客人正在忙生意，还不到吃饭喝酒的时间，你看码头上货主正在清点要发某地的货物，码头工人正在把运来的货物堆码起来，准备根据运货地点远近，适时安排装卸，正所谓是先上船后起坡。另一条船也正在卸货，在这一、二百年树龄的大树枝叶缝隙中，可以看到粗大的帆桅及绳索，也应是六、七十吨左右排水量的大船了。酒店与茶馆之间的街道中间，有一个正在喊一位打卦算命的先生，可能要他测算一下什么事情，是婚姻、家庭还是生意，算卦先生听到来了生意，轻快的脚步可见他的喜悦之情。往街里边看过去，一家包点店的人与一位挑担买卖人正在谈事情，仿佛能听到他们在对话，明天还点什么油盐酱醋之类东西和什么时候结账之类话语，再过去又是几家店铺字号，又是一条大道伸向远方并有行人骡马行走。</span></p><p><span>再过去几家店铺就是主干道汴梁大道了，主干道两边车水马龙店铺林立，都围着这</span><a href='https://baike.so.com/doc/1032797-1092266.html'><span>风水宝地</span></a><span>的货码头与货运栈了，这座货运栈地理位置十分优越，四周街道四通八达，南边紧靠深水港湾，有好几艘船只停泊在港湾里依次装卸货物，一条靠码头的船正在卸货，几个码头工人正把像装有粮食之类的麻袋扛下船，船舱里有人正在翻舱与上货，似乎能听到船舱里传出给人把货物麻袋上肩的劳动号子声。紧靠货栈码头停泊着待卸货与装货的船舶，等船老大上船后就吃饭开船，货栈前面的船老大刚结完账正要上船，半路中正巧遇见了一个熟人，心中记挂着赶路行船，但又不能怠慢了熟人或朋友，在急切中与之寒酸家常，最后抱拳行礼告辞。这时脚步早已转向，急奔船上去的样子己超然若现。</span></p><h3><a name="折叠httpsbaikesocomdoc5366651-5602376html汴河" class="md-header-anchor"></a><a href='https://baike.so.com/doc/5366651-5602376.html#'><span>折叠</span></a><strong><span>汴河</span></strong></h3><p><span>汴河是北宋时期，国家重要的漕运交通枢纽，商业交通要道，从画面上可以看到人口稠密，商船云集，人们有的在茶馆休息，有的在看相算命，有的在饭铺进餐。还有&quot;王家纸马店&quot;，是卖扫墓祭品的，河里船只往来，首尾相接，或纤夫牵拉，或船夫摇橹，有的满载货物，逆流而上，有的靠岸停泊，正紧张地卸货。横跨汴河上的是一座规模宏大的木质</span><a href='https://baike.so.com/doc/680658-720468.html'><span>拱桥</span></a><span>，它结构精巧，形式优美。宛如飞虹，故名虹桥。有一只大船正待过桥。船夫们有用竹竿撑的;有用长竿钩住桥梁的;有用麻绳挽住船的;还有几人忙着放下桅杆，以便船只通过。邻船的人也在指指点点地像在大声吆喝着什么。船里船外都在为此船过桥而忙碌着。桥上的人，伸头探脑地在为过船的紧张情景捏了一把汗。这里是</span><a href='https://baike.so.com/doc/2509379-2651668.html'><span>名闻遐迩</span></a><span>的虹桥码头区，桥头布遍刀剪摊、饮食摊和各种杂货摊，两位摊主正争相招呼一位过客来看自己的货物。这里名副其实是一个水陆交通的会合点，可称为画面的高潮片段。</span></p><p><span>码头的主航道中一条货船逆水而上，船右舷上面的水手们都在严密注视时刻应对，避免与停泊的船只发生碰撞。在江河走安全工作是非常重要的，船头前面一艘停泊在码头，欣左预已出来一位水手，时刻注意行船的动向，准备排除船只之间的碰撞，行进中的船只似乎要泊岸了，该船的&quot;头纤&quot;(拉纤队伍的第一位纤夫)己回过身来招呼伙伴们收纤。再往河道上游看去，一艘船上有八位橹工摇橹，可见水流的速度是很快的，一位舵手严密注视着前进方向的水情与船情。前面一艘客船正忙着靠岸，这儿是客运码头，客船上有二十多人在紧张的工作，船顶的几位船工正在收帆放桅，有的船工正在接收从虹桥上抛下的缆绳，准备把客船牵引到码头，再拴牢在岸上的栓船柱石上，以增加客船的稳性，</span><a href='https://baike.so.com/doc/9709942-10056344.html'><span>左舷</span></a><span>上的水手用船蒿把船撑向码头，以增加向码头靠近的动力，船头有两位水手一面把船向右撑，一面扭头注意码头，用以使客船对正码头调整撑船力度，另一位船工手拿撑蒿右手向前挥动、指挥码头的船工接应，看来他应是此客船的水手长了。客船体形宽大稳性相当良好，船工各司其职工作相当熟练，动作非常协调，看来是一帮素质非常高的船工，舱体与舱面有封闭与阻隔，并有舱门便于客人出进，船没停稳之前舱门决不打开，安全措施相当严谨，可以断定是一艘安全性能良好的长途客动船。</span></p><p><span>码头上还有不少人向客船上招呼，他们是迎接自己家人或亲朋好友的，有的还上了虹桥，借虹桥的高度招呼，以便早点见到亲人，旁边一只小一点的客船上也有人挥手呼喊，那是在招揽生意，呼唤需要到分河航道码头的客人，可以想见当时汴河流域的交通多么发达，水旱各路构成了很大的客运货运交通网络。</span></p><p><span>虹桥气势不菲，高大得使汴河流域最大的船舶都能顺利穿越，宽阔坚固得能并排行驶几辆装满货物的畜力车，从桥的结构来看也是一个很大的创造，整座大桥全部由木材修建而成，可能当汴河水流很急，河床中不利于修建桥墩，当时的工程技术人员发挥了他们的聪明才智，把整根整根的大木材并列铆接榫合，以支撑大桥的跨度，桥面又用成排的木料链固杵紧，使之形成一个硕大坚固的整体，并分散了负重使跨河木料受力均匀，试想在一千多年前，没有工程机械的情况下，把这么大的木料横架在河道上，建筑的难度可想而知，工程的浩大是多么的气壮山河。在桥边有牢固的护栏，以保障车马行人的安全，使工程的使用性能与质量达到了无可挑剔的境界。</span></p><p><span>虹桥是两地咽喉要道，桥面上车水马龙熙熙攘攘，由于过往行人多人气旺盛，商贩不失时机的占道经营，有的摆地摊，有的卖食品，还有一家卖刀剪，牛尾锁等小五金的摊子，为了使商品更加醒目，把货摊设计成斜面，这样的场面，一直延伸到桥头的形成了一个特色的商贸区。</span></p><p><span>桥下一艘船逆流而上，似乎要去泊船，船头的船工正在试探河道深浅，因为在桥头得河床里一般要放置一些大石头，以免流水冲刷桥头坡岸防止发生垮塌，所在此位置移船要特别小心谨慎，以免搁浅损坏船只。</span></p><p><span>上游不远处已有几艘船依次泊在岸边，主航道中有两艘船在航行，橹工的汴河号子与纤工的汴河号子两首和声合唱回响在空中，渐渐的远去，渐渐远去，这些人文的场景与秀丽的河山形成了一副美丽风俗画面，所以一些文人雅士、达官贵人要找寻的好地方，在对岸的河湾</span><a href='https://baike.so.com/doc/2576817-2721104.html'><span>缓冲区</span></a><span>，商人不失时机的安置了两条游船，让他们在上面饮酒唱茶，欣赏汴河的风景。</span></p><h3><a name="折叠httpsbaikesocomdoc5366651-5602376html街市" class="md-header-anchor"></a><a href='https://baike.so.com/doc/5366651-5602376.html#'><span>折叠</span></a><strong><span>街市</span></strong></h3><p><span>以高大的城楼为中心，两边的屋宇鳞次栉比，有茶坊、</span><a href='https://baike.so.com/doc/540199-571903.html'><span>酒肆</span></a><span>、脚店、肉铺、庙宇、</span><a href='https://baike.so.com/doc/6608088-6821875.html'><span>公廨</span></a><span>等等。商店中有绫罗绸缎、珠宝香料、香火纸马等的专门经营，此外尚有医药门诊，大车修理、看相算命、修面整容，各行各业，应有尽有，大的商店门首还扎&quot;彩楼欢门&quot;，悬挂市招旗帜，招揽生意，街市行人，</span><a href='https://baike.so.com/doc/507187-537021.html'><span>摩肩接踵</span></a><span>，川流不息，有做生意的商贾，有看街景的士绅，有骑马的官吏，有叫卖的小贩，有乘坐轿子的大家眷属，有身负背篓的行脚僧人，有问路的外乡游客，有听说书的街巷小儿，有酒楼中狂饮的豪门子弟，有城边行乞的残疾老人，男女老幼，士农工商，三教九流，无所不备。交通运载工具:有轿子、骆驼、牛车、人力车，有太平车、平头车，形形色色，样样俱全，把一派商业都市的繁华景象绘色绘形地展现于人们的眼前。</span></p><p><span>首先是汴河码头与城门的中间地带，特别有利于商贸活动，随着多年没有战乱，酒店茶楼逐渐发展起来，各种店铺字号鳞次栉比，各种车轿骡马忙碌不停，画面清楚地看到一间木工作坊的两位技工正在紧张地赶制一辆骡马车，拐弯的街道一位货主租用毛驴，驮工正在把地上的货物上驮，还有一位女士准备租用一乘轿子代步，再看过来是一块不大的劳务广场，又是进城的必经之路，因此商务活动频繁，一位算命大师不失机缘的在这儿盖了一间房子，找他推算寿命财运的人很多生意非常兴隆。过溪沟小桥的脚行门前有不少劳工，有的坐着休息，有的在打瞌睡，还有的干脆躺下休息，脚行里面还有骡马也拴在那里，看来他们是在养精蓄锐，以便来了生意后精力充沛的工作，虽然还没有事做但也不会哄抢别人的生意，是很遵守脚行规矩的，你看广场上的劳务人员生意非常好，一乘轿子已起肩上轿，另一乘轿子也在待租，小桥上一位摊贩已把货卖完回家，那边还有一些住户农家桥头还有几头毛驴，屋旁有一妇人抱着一小孩、旁边不远还躺着几头肥硕的猪。</span></p><p><span>劳务广场拐弯就是护城河大桥，生意人不失时机在这里摆上了摊贩。一个摊贩摆的藤竹编织篮筐，这种物品轻巧坚固耐用，一个做灯笼的更是生意兴隆，这种物品点上灯烛后即明亮又防风，是夜间照明的好伙伴，你看有人买了一个转身正要离去，小贩又在招乎另一个买主，桥上行人如梭，桥的两边护栏还有不少人向河里观看，是否有人在河里钓上了什么大鱼什么的。城门前有一个地摊更有意思，他正在起身半蹬状与一位骑马的人招乎，似乎不放过每一个行人兜售他的鬼玩意儿，后面的几个人也在注意着他生意动向，真有点像生意的托儿。</span></p><p><span>城门高大宏伟，几匹骆驼缓缓地向城外走去，这种动物内地没有，是</span><a href='https://baike.so.com/doc/5341576-5577019.html'><span>戈壁滩</span></a><span>的特产，被人们用来作运输工具，应是西域商人来汴梁做生意的，是往来于丝绸之路的国际贸易商团。</span></p><p><span>城内更一番特色一家商号好似是另担货运样子，货运物流己具雏形，隔壁又是一家香油加工作坊，香油销售形势很好，还有车马运送，并且货源充足，己是初具规模了，一栋几层楼的客栈，门前客人熙熙攘攘，里面客人也不少，定是大贾富商住的，过街的一间店铺还有修面的，在城内是特别注意仪表的。城市功能真是齐全，吃穿住用样样都有，一家绸缎庄店面很宽，里面放满各色彩绸景帛，可见当时的养蚕织锦相当发达了，送水的生意也很好，地下水好似矿泉水甘甜清爽着呢。就在城内这一小块地方就有两家诊所，杨大夫精于疮瘰外科，赵太丞医术更高明，男、妇、儿科都很精通，各种丸散样样齐全，当时医疗水平相当高了。</span></p><p><span>从内城方向走来一队人马，前面有仪仗开道、好威风的，常言道文官坐轿，武官骑马，的确是一个武官，后面还有人替他拿着一把关刀。另有两人在码头两手拉着嚼口，这是害怕惊马或失前蹄最有效的方法。</span></p><h3><a name="折叠httpsbaikesocomdoc5366651-5602376html曲谏" class="md-header-anchor"></a><a href='https://baike.so.com/doc/5366651-5602376.html#'><span>折叠</span></a><strong><span>曲谏</span></strong></h3><p><span>《清明上河图》并非只是简单的描绘百姓风俗和日常生活，在商业繁荣的表面之下暗藏玄机，明线下交织着一条令人心悸的暗线，同时又是一幅带有忧患意识的&quot;盛世危图&quot;。通过表现惊马闯郊市为伏笔，铺垫出全卷矛盾的视觉中心，船与桥的险情和桥上文武官员争道交织成的矛盾高潮，还有前后出现的军力懈怠、消防缺失、城防涣散、国门洞开、商贸侵街、商贾囤粮、酒患成灾等场景。张择端以画曲谏，提出对城防、安全、交通等诸多社会问题的忧虑。</span></p><p><span>从文献中可知，汴京是十二世纪初世界最大的城市之一，人口达137万，8厢120坊，绝大多数建筑都是砖木结构。北宋经历了40多次特大火灾，因此消防是当时朝野最关注的严峻问题。当时汴京的防火措施非常严密，每个坊都设有一座望火楼，专门观测火警。楼下有被称为&quot;潜火兵&quot;的军队驻守，专司消防。余辉说，张择端画了望火楼，但楼上无一人观望，更夸张的是，望火楼下的两排兵营被改作了饭馆。</span></p><p><span>比消防缺失更可怕的是城防的涣散。画中，城墙上下没有一个守卫，土墙上面也没有任何城防工事，连射箭的城垛也没有，甚至连虚设的城防都没有。原本应该是有重兵把守的城防机构所在的位置，居然是一家商铺，老板正在验货，账房在记账。从画面上看，整个汴京正沉浸在浓厚的商贸气氛中，完全是一座不设防的都城。这不是张择端的有意设计，而是真实地反映了宋徽宗朝初期已日渐衰败的军事实力和日趋淡漠的防范意识。</span></p><p><span>画卷中有很多船，其中大量的是运粮的私家船。表面看来这是一种商贸兴隆的景象，实则反映出当时政府的一项重要失误:宋徽宗将大量运粮的官船用去运送花石纲，使得粮食运送出现问题。私船趁机而入，并渐渐把持住了城市的粮食市场，进而操控粮食价格。</span></p><p><span>城门边，税务官指着麻包说出了一个想要的数字，引起货主们的不满，一车夫急得张大了嘴嚷嚷了起来，吵声之高，惊动了城楼上的更夫向下张望。北宋的冗税制度激发了官民之间的对立情绪，这一场景象征着当时紧张的官民关系。</span></p><p><span>画中两处出现渎文悲剧，车夫把被废黜的旧党书写的大字屏风当作苫布，包裹着旧党人的其他书籍文字装上串车，奉主人之命推到郊外销毁。反映了当时政治斗争的残酷和对文化艺术的破坏程度。</span></p><p><span>卷尾，画家描绘一个惊险的场面:两辆四拉马车急转飞驰，横冲直撞，路人尚未来得及躲闪;还出现临时性的侵街现象，即在城门口有富人占道举行杀黄羊祭路神送客的情景，足见城市管理之混乱，随意性泛滥。</span></p><p><span>张择端欲通过《清明上河图》向宋徽宗展现一些社会顽疾。由于宋太宗采取鼓励文人谏言的政治措施，关注社会现实和朝廷政治成为宋代画家较为普遍的创作趋向。北宋官吏利用绘画向皇帝表述民情的手法不止一例，如熙宁七年(公元1074年)是北宋的大灾之年，光州司法参军郑侠借工匠绘制的《流民图》请求宋神宗停止王安石的变法活动。遗憾的是，宋徽宗迷恋精绘祥瑞和吉兆，他看出《清明上河图》的画中用意，不愿收藏，只在卷首题签后就将其赏赐出去。</span></p><h2><a name="折叠httpsbaikesocomdoc5366651-5602376html编辑本段httpsbaikesocomcreateediteid5366651sid5602376secid2鉴赏" class="md-header-anchor"></a><a href='https://baike.so.com/doc/5366651-5602376.html#'><span>折叠</span></a><a href='https://baike.so.com/create/edit/?eid=5366651&amp;sid=5602376&amp;secid=2'><span>编辑本段</span></a><strong><span>鉴赏</span></strong></h2><p><span>从《清明上河图》中可以看到几个非常鲜明的艺术特色:此画用笔兼工带写，设色淡雅，不同一般的界画，即所谓&quot;别成家数&quot;。构图采用鸟瞰式全景法，真实而又集中概括地描绘了当时汴京东南城角这一典型的区域。作者用传统的手卷形式，采取&quot;散点透视法&quot;组织画面。画面长而不冗，繁而不乱，严密紧凑，如一气呵成。画中所摄取的景物，大至寂静的原野，浩瀚的河流，高耸的城郭;小到舟车里的人物，摊贩上的陈设货物，市招上的文字，丝毫不失。画面中，穿插着各种情节，组织得有错落有致，同时又具有情趣。</span></p><h3><a name="折叠httpsbaikesocomdoc5366651-5602376html内容" class="md-header-anchor"></a><a href='https://baike.so.com/doc/5366651-5602376.html#'><span>折叠</span></a><strong><span>内容</span></strong></h3><p><strong><span>内容丰富，描绘东西繁多。</span></strong><span>《清明上河图》在表现手法上，以不断移动视点的办法，即&quot;散点透视法&quot;来摄取所需的景象。大到广阔的原野、浩瀚的河流、高耸的城郭，细到舟车上的钉铆、摊贩上的小商品、市招上的文字，和谐的组织成统一整体，在画中有仕、农、商、医、卜、僧、道、胥吏、妇女、儿童、篙师、缆夫等人物及驴、牛、骆驼等牲畜。有赶集、买卖、闲逛、饮酒、聚谈、推舟、拉车、乘轿、骑马等情节。画中大街小巷，店铺林立，酒店、茶馆、点心铺等百肆杂陈，还有</span><a href='https://baike.so.com/doc/3321428-3498287.html'><span>城楼</span></a><span>、河港、桥梁、货船，官府宅第和茅棚村舍密集。</span></p><p><span>关于《清明上河图》中画有的人数，说法不一，常见的有500余人说(白寿彝《中国通史》)、815人说(汤友常数米法)、1695人说(齐藤谦《拙堂文话·卷八》)，此外各种牲畜六十多匹，木船二十多只，房屋</span><a href='https://baike.so.com/doc/6937633-7159991.html'><span>楼阁</span></a><span>三十多栋，推车乘轿也有二十多件，各种说法较为一致。如此丰富多彩的内容，为历代古画中所罕见。各色人物从事的各种活动，不仅衣着不同，神情气质也各异而且穿插安排着各种活动，其间充满着戏剧性的情节冲突，令观者看罢，饶有无穷回味。</span></p><h3><a name="折叠httpsbaikesocomdoc5366651-5602376html结构" class="md-header-anchor"></a><a href='https://baike.so.com/doc/5366651-5602376.html#'><span>折叠</span></a><strong><span>结构</span></strong></h3><p><strong><span>结构严谨，繁而不乱，长而不冗，段落分明。</span></strong><span>可贵的是，如此丰富多彩的内容，主体突出，首尾呼应，全卷浑然一体。画中每个人物、景象、细节，都安排得合情合理，疏密、繁简、动静、聚散等画面关系，处理得恰到好处，达到繁而不杂，多而不乱。充分表现了画家对社会生活的深刻洞察力和高度的画面组织和控制能力。从内容看，此画属于风俗画，也具有风俗画的特点。</span></p><h3><a name="折叠httpsbaikesocomdoc5366651-5602376html技法" class="md-header-anchor"></a><a href='https://baike.so.com/doc/5366651-5602376.html#'><span>折叠</span></a><strong><span>技法</span></strong></h3><p><strong><span>在技法上，大手笔与精细的手笔相结合。</span></strong><span>善于选择那些既具有形象性和富于诗情画意，又具本质特征的事物、场面及情节加以表现。十分细致入微的生活观察，刻划每一位人物、道具。每个人各有身份，各有神态，各有情节。房屋、桥梁等建筑结构严谨，描绘一笔不苟。车马船只面面俱到，谨小而不失全貌，不失其势。比如船只上的物件、钉铆方式，甚至结绳系扣都交待得一清二楚，令人叹为观止。</span></p><h2><a name="折叠httpsbaikesocomdoc5366651-5602376html编辑本段httpsbaikesocomcreateediteid5366651sid5602376secid3流传历史" class="md-header-anchor"></a><a href='https://baike.so.com/doc/5366651-5602376.html#'><span>折叠</span></a><a href='https://baike.so.com/create/edit/?eid=5366651&amp;sid=5602376&amp;secid=3'><span>编辑本段</span></a><strong><span>流传历史</span></strong></h2><p><span>1101年，张择端作《清明上河图》被收入御府。宋徽宗赵佶在卷首题五签，并加盖双龙小印(已佚)。</span></p><p><span>1127年，靖康之变后，《清明上河图》卷入金人地区。</span></p><p><span>1186年，(金)张著、</span><a href='https://baike.so.com/doc/8405993-8725695.html'><span>张公药</span></a><span>、郦权、王磵(jiàn)、张世积等题跋于图后。</span></p><p><span>1260年，</span><a href='https://baike.so.com/doc/169394-178952.html'><span>元朝</span></a><span>建立后，《清明上河图》被收入秘府。为官匠装池者以赝本偷换出宫。售予某贵官，中途又为保管人偷售给杭州</span><a href='https://baike.so.com/doc/1539600-1627629.html'><span>陈彦廉</span></a><span>。</span></p><p><span>1351年，杨准从</span><a href='https://baike.so.com/doc/9075953-9407401.html'><span>陈处</span></a><span>购得，题长跋记述始末。次年，江西刘汉从杨准处获观，为之题跋，誉为&quot;精艺绝伦&quot;。</span></p><p><span>1365年，(元)李祁，记图为静山周氏家。</span></p><p><span>1461年前后，(明)</span><a href='https://baike.so.com/doc/6356283-6569917.html'><span>吴宽</span></a><span>题称，图在大理寺卿朱鹤坡家。&quot;朱公云:&#39;此图有稿本，在张英公家。&#39;&quot;</span></p><p><span>弘治以后，固归华盖殿大学士徐溥所有。徐临终时，赠李东阳。</span></p><p><span>1524年，图归兵部尚书陆完。陆作题记。陆完死后，其子售予昆山顾鼎臣家，不久，归相国严嵩、严世蕃父子。在此期间，社会上流传很多关于严篙父子借《清明上河图》打击、陷害都御史王忬(yu)的传闻，并被时人收入笔记著作中。严嵩败，家产被籍没，图入宫廷。</span></p><p><span>1578年，(明)司礼监</span><a href='https://baike.so.com/doc/1774469-1876475.html'><span>冯保</span></a><span>跋。图由内府转入冯保之手。</span></p><p><span>1644年，入清以后，图先后为陆费墀、毕沅等人收藏。</span></p><p><span>1799年，毕沅死后第四年，家产被籍没，图被收入清宫，并著录于《石渠宝笈三编》。</span></p><p><span>1911年以后，《清明上河图》连同其他珍贵书画一起，被清末代皇帝溥仪以赏溥杰为名盗出宫外，先存在</span><a href='https://baike.so.com/doc/6228003-6441326.html'><span>天津租界</span></a><span>内的张园内。</span></p><p><span>1921年，溥仪以赏赐溥杰为名，将《清明上河图》等文物偷运出宫，由天津转长春伪满皇宫。</span></p><p><span>1932年，溥仪在日本人扶植下，建立伪满洲国，于是这幅名画又被带到长春，存在伪皇宫东院图书楼中。</span></p><p><span>1945年8月，第二次世界大战接近尾声，日本侵略者的末日也到了。溥仪和他的日本主子一见大事不好，便乘飞机逃往大栗子沟，伪满皇宫因失火而一片狼藉。混乱之中，有不少人便趁机进宫&quot;抢洋捞&quot;，伪皇宫的大批珍贵之物便在这场动乱中流散到了民间，其中，就有《清明上河图》。在通化被截获。将图存放于东北博物馆，后拨交北京故宫博物院。</span></p><p><span>1948年，中国人民解放军解放了长春。解放军干部张克威通过当地干部收集到伪满皇宫流散出去的珍贵字画十余卷，其中就有《清明上河图》。</span></p><p><span>1949年，张克威同志调到</span><a href='https://baike.so.com/doc/891004-941889.html'><span>东北行政委员会</span></a><span>工作，临行前他将这十余幅卷轴交给了当时开辟东北革命根据地的主要负责人之一林枫同志。《清明上河图》经林枫之手进了东北博物馆，后来又调到北京故宫博物院珍存。</span></p><p><span>2015年9月8日至11月8日，&quot;石渠宝笈特展&quot;将在故宫的武英殿展出，长528厘米的北宋张择端《清明上河图》全卷铺开陈列。10年前，为了庆祝故宫博物院80岁生日，这幅作品曾经展出过。之后这10年，这幅图只在香港和日本展出过，但都未曾全展开。</span></p><h2><a name="折叠httpsbaikesocomdoc5366651-5602376html编辑本段httpsbaikesocomcreateediteid5366651sid5602376secid4版本" class="md-header-anchor"></a><a href='https://baike.so.com/doc/5366651-5602376.html#'><span>折叠</span></a><a href='https://baike.so.com/create/edit/?eid=5366651&amp;sid=5602376&amp;secid=4'><span>编辑本段</span></a><strong><span>版本</span></strong></h2><p><span>宋张择端《清明上河图》，是一幅举世闻名的现实主义风俗画卷。千余年来，此画声名显赫，广受青睐，仿摹者众多。各地公私藏家手中还有许多摹本和伪造本，有人统计，现存《清明上河图》有30多本，其中大陆藏10余本，</span><a href='https://baike.so.com/doc/1923887-2035414.html'><span>台湾</span></a><span>藏9本，</span><a href='https://baike.so.com/doc/2188339-2315407.html'><span>美国</span></a><span>藏5本，</span><a href='https://baike.so.com/doc/1599551-1690899.html'><span>法国</span></a><span>藏4本，</span><a href='https://baike.so.com/doc/3764882-3955016.html'><span>英国</span></a><span>和</span><a href='https://baike.so.com/doc/980327-1036260.html'><span>日本</span></a><span>各藏一本，光是台北故宫博物院就藏有7本。</span></p><h3><a name="折叠httpsbaikesocomdoc5366651-5602376html宋本" class="md-header-anchor"></a><a href='https://baike.so.com/doc/5366651-5602376.html#'><span>折叠</span></a><strong><span>宋本</span></strong></h3><p><span>作者张择端，现藏于故宫博物院，所以被称为《清明上河图》故宫藏本。</span></p><p><span>《清明上河图》是中国绘画史上最著名的作品之一，不但艺术水平高超，而且围绕着它还流传下来许多有趣的故事。绘画史上名为《清明上河图》的画幅很多，但真本毕竟只有一幅。经过众多学者、专家对这一专题的研究，大家意见基本一致，都认为现藏北京故宫博物院的这幅是北宋张择端的原作。其它的同名画作，均为后来的摹本或伪托张择端的臆造本。</span></p><h3><a name="折叠httpsbaikesocomdoc5366651-5602376html明本" class="md-header-anchor"></a><a href='https://baike.so.com/doc/5366651-5602376.html#'><span>折叠</span></a><strong><span>明本</span></strong></h3><p><span>又称&quot;仇英本&quot;，是</span><a href='https://baike.so.com/doc/5398031-5635411.html'><span>吴门四家</span></a><span>&quot;之一，明代著名画家仇英，根据&quot;清明上河&quot;这一题材，参照&quot;</span><a href='https://baike.so.com/doc/1916089-2027227.html'><span>宋本</span></a><span>&quot;的构图结构，以明代苏州城为背景，采用青绿重设色方式，重新创作了一幅全新画卷，风格与宋本迥异。&quot;仇本&quot;也是后世众仿作鼻祖，明人笔记载，当时各种以此为蓝本的仿作层出不穷，一时间成为达官豪门相互馈赠的高档礼物。被称为仇英仿本。现藏台北故宫博物院。如今互联网上流传的很多关于清明上河图的全景图图片其实便是这个版本的作品。</span></p><h3><a name="折叠httpsbaikesocomdoc5366651-5602376html清院本" class="md-header-anchor"></a><a href='https://baike.so.com/doc/5366651-5602376.html#'><span>折叠</span></a><strong><span>清院本</span></strong></h3><p><span>第三个版本是在乾隆元年(1736年)由清宫画院五位画家陈枚、</span><a href='https://baike.so.com/doc/661882-700671.html'><span>孙祜</span></a><span>、金昆、戴洪、程志道合作画成，可以说是按照各朝的仿本，集各家所长之作品，再加上明清时代特殊风俗，如踏青、表演等等娱乐活动，因此增加了许多丰富的情节，如戏剧、猴戏、特技、擂台等等，画的事物繁多，虽然失去了宋代古制，却是研究明清之际社会风俗不可缺的材料。同时，由于西洋画风的影响，街道房舍，均以透视原理作画，并有西式建筑列置其中。此卷用色鲜丽明亮，用笔圆熟细致，界画桥梁、屋宇、人物皆细腻严谨，是院画中极精之作。这个版本现存于台北故宫博物院。被称为</span><a href='https://baike.so.com/doc/541816-573640.html'><span>清院本清明上河图</span></a><span>。</span></p><h2><a name="折叠httpsbaikesocomdoc5366651-5602376html编辑本段httpsbaikesocomcreateediteid5366651sid5602376secid5后世评价" class="md-header-anchor"></a><a href='https://baike.so.com/doc/5366651-5602376.html#'><span>折叠</span></a><a href='https://baike.so.com/create/edit/?eid=5366651&amp;sid=5602376&amp;secid=5'><span>编辑本段</span></a><strong><span>后世评价</span></strong></h2><p><span>作者以长卷形式，采用</span><a href='https://baike.so.com/doc/1448158-1530860.html'><span>散点透视</span></a><span>的构图法，将繁杂的景物纳入统一而富于变化的图画中。图中所绘城廓市桥屋庐之远近高下，草树牛驴驼之大小出没，以及居者行者，舟车之往还先后，皆曲尽其仪态而莫可数记，全副场面浩大，内容极为丰富，整幅画作气势宏大、构图严谨、笔法细致，充分表现了画家对社会生活的深刻洞察力和高超的艺术表现能力。</span></p><p><span>《清明上河图》不仅仅是一件伟大的</span><a href='https://baike.so.com/doc/1588909-1679582.html'><span>现实主义</span></a><span>绘画艺术珍品，同时也为我们提供了北宋大都市的商业、手工业、民俗、建筑、交通工具等详实形象的第一手资料，具有重要历史文献价值。其丰富的思想内涵、独特的审美视角、现实主义的表现手法，都使其在中国乃至世界绘画史上被奉为经典之作。</span></p><p><a href='https://baike.so.com/doc/5972429-6185388.html'><span>白寿彝</span></a><span>任顾问的《中国通史(彩图本)》对《清明上河图》的评价:全卷所绘人物五百余位，牲畜五十多只，各种车船二十余辆艘，房屋众多，道具无数，场面巨大，段落分明，结构严密，有条不紊。技法娴熟，用笔细致，线条遒劲，凝重老练。反映了高度精纯的绘画功力和出色的艺术成就。同时，因为画中所绘为当时社会实录，为后世了解研究宋朝城市社会生活提供了重要的历史资料。</span></p><p><span>《</span><a href='https://baike.so.com/doc/4279949-4483233.html'><span>简明不列颠百科全书</span></a><span>》在&quot;</span><a href='https://baike.so.com/doc/2786460-2941075.html'><span>张择端</span></a><span>&quot;条内对《清明上河图》的评价:是一幅具有重要历史价值的风俗长卷，画家成功地描绘出汴京城内及近郊在清明时节社会上各阶层的生活景象。主要表现的是劳动者和小市民。对人物、建筑物、交通工具、树木、水流之间的相互关系的处理，非常巧妙，整体感很强，具有极大的考史价值。此后历代绘制的都市风俗画，无不受其影响。</span></p><p><span>2015年9月，专家表示，《清明上河图》虽然场面热闹，但表现的并非繁荣市景，而是一幅带有忧患意识的&quot;盛世危图&quot;，官兵懒散税务重。</span></p><h2><a name="折叠httpsbaikesocomdoc5366651-5602376html编辑本段httpsbaikesocomcreateediteid5366651sid5602376secid6画作之谜" class="md-header-anchor"></a><a href='https://baike.so.com/doc/5366651-5602376.html#'><span>折叠</span></a><a href='https://baike.so.com/create/edit/?eid=5366651&amp;sid=5602376&amp;secid=6'><span>编辑本段</span></a><strong><span>画作之谜</span></strong></h2><h3><a name="折叠httpsbaikesocomdoc5366651-5602376html秋景之说" class="md-header-anchor"></a><a href='https://baike.so.com/doc/5366651-5602376.html#'><span>折叠</span></a><strong><span>秋景之说</span></strong></h3><p><span>北宋画家</span><a href='https://baike.so.com/doc/2786460-2941075.html'><span>张择端</span></a><span>绘制的长卷风俗画《清明上河图》，是誉满中外的艺术珍品。它和唐人</span><a href='https://baike.so.com/doc/5646153-5858789.html'><span>韩滉</span></a><span>创作的《</span><a href='https://baike.so.com/doc/5478308-5716220.html'><span>五牛图</span></a><span>》一样，被称为画苑&quot;国宝&quot;。其最早收藏者是宋徽宗(赵佶)，他用瘦金体书写的&quot;清明上河图&quot;真迹和双龙小印(宋代皇帝的闲章，用于鉴赏或收藏艺术品时铃记)，可证画成后最初收藏在皇宫，公元1126年汴京陷落后，宫中所有名贵文物包括这幅名画，统统被金人掠去，金人初不识此画的价值。又过了59年，即金世宗大定二十六年(1186年)，金人张著最早在《清明上河图》上撰跋文转引《向氏评论图画记》说，证实宋人张择端有《清明上河图》及《西湖争标图》，这样《清明上河图》的名称始定下来。</span></p><p><span>历史上对张择端创作《清明上河图》的年代，以及&quot;上河&quot;一词曾有过一些争论，对画中描绘的是清明时节，从金代以来，似无异议。明代的《味水轩日记》中记载，这幅画不但有宋徽宗的瘦金体题签、双龙小印，并且还有宋徽宗的题诗;诗中有&quot;水在上河春&quot;一句。这样一来，这画卷描绘的是春天景色就更不用怀疑了，近代及当代美术史家郑振铎、徐邦达、</span><a href='https://baike.so.com/doc/7548670-7822763.html'><span>张安治</span></a><span>等均主&quot;春景&quot;之说。但是，也有人对此提出异议。</span></p><p><span>对春景之说首先怀疑者是开封市教师孔宪易先生。他在1981年《美术》杂志第二期上发表《清明上河图的&quot;清明&quot;质疑》一文，列举了八项理由，认定《清明上河图》上所绘是秋景。</span></p><p><strong><span>一</span></strong><span>、画卷右首有驮负10篓木炭的驴子。北宋</span><a href='https://baike.so.com/doc/2855586-3013437.html'><span>孟元老</span></a><span>《</span><a href='https://baike.so.com/doc/5468571-5706483.html'><span>东京梦华录</span></a><span>》记载:每年农历十月，汴京始&quot;进暖炉炭，帏前皆置酒作暖会&quot;，若说清明节前后进暖炉炭，违背宋人生活习俗。孟元老和张择端生活在同一时代，《东京梦华录》是研究北宋汴梁风土民俗的重要资料，所述史事当是可信的。</span></p><p><strong><span>二</span></strong><span>、画面有一农家短篱内长满了像茄子一类的作物，更为有趣的是几名孩童赤身嬉戏追逐，这些都不可是清明时节的事物。</span></p><p><strong><span>三</span></strong><span>、画面上的人物拿扇者有十多人，有扇风状，有遮阳状，常识告诉人们伏天用扇，初春用扇者极少见。</span></p><p><span>四、草帽、竹笠在画面上多处出现。&quot;草帽、竹笠是御暑、御雨的东西，图中既不下雨，这肯定是御阳用的，根据当时汴梁的气候，清明节似无此必要，这是值得我们怀疑的。&quot;</span></p><p><span>五、画面上酒肆多处，酒旗上写着&quot;新酒&quot;二字，而《东京梦华录》云:&quot;中秋节前，诸店皆卖新酒……醉仙锦，市人争饮(见该书&quot;中秋&quot;条)。&quot;宋代新谷下来要酿醪酒喜庆丰收，不然无新酒可言。</span></p><p><span>六、面上有一处招牌上写着&quot;口暑饮子&quot;这样的小茶水摊。&quot;如果&#39;口暑饮子&#39;中的&#39;暑&#39;字不错的话，这足以说明它的季节。&quot;</span></p><p><span>七、河岸及桥上有好几处小贩的货桌上都摆着切开的西瓜。宋时古都汴梁的早春乍暖还寒，不可能有西瓜一类鲜果。</span></p><p><span>八、画面乘轿、骑马者带着仆从的行列，土坟后面向城市一段。细细分析，这些人虽然有上坟扫墓的可能，倒不如说它是秋猎而归更恰当些，因为，上坟四季皆有可能，就插花而言，春秋二季都能解释得通。今从画面种种现象来看，说是秋季倒符合实际些。</span></p><h3><a name="折叠httpsbaikesocomdoc5366651-5602376html颂辞之说" class="md-header-anchor"></a><a href='https://baike.so.com/doc/5366651-5602376.html#'><span>折叠</span></a><strong><span>颂辞之说</span></strong></h3><p><span>继孔宪易《清明上河图的&quot;清明&quot;质疑》一文后，20世纪80年代中期，</span><a href='https://baike.so.com/doc/9236817-9570153.html'><span>邹身城</span></a><span>先生在中国宋史研究会上提出论文《宋代形象史料〈清明上河图〉的社会意义》，认为&quot;清明&quot;既非节令，亦非地名。这里&quot;清明&quot;一词，本是画家张择端进献此画时所作的颂辞。故有人认为，这里的&quot;清明&quot;要从广义上去理解。《</span><a href='https://baike.so.com/doc/173711-183508.html'><span>后汉书</span></a><span>》有例证，是出云:&quot;固幸得生&#39;清明之世&#39;……&quot;从语气看这个&quot;清明&quot;系指政治开明。画中题款&quot;清明&quot;语，本是张择端进献此画，请帝王们赏识所作的颂辞。金人在画面上留下的跋文说:&quot;当日翰林呈画本，承产风物正堪传。&quot;点明此画主题在于表现承平风物。考张择端行年，他于徽宗朝在翰林书画院供职，此画的第一位收藏人便是宋徽宗，证画家意在称颂盛世，讨最高统治者欢心。知道了这个背景，显然&quot;清明&quot;一词不是指节令。</span></p><h3><a name="折叠httpsbaikesocomdoc5366651-5602376html真伪之说" class="md-header-anchor"></a><a href='https://baike.so.com/doc/5366651-5602376.html#'><span>折叠</span></a><strong><span>真伪之说</span></strong></h3><p><span>关于《清明上河图》还有真伪之说，明、清时代就有一些传闻，清代长为人</span><a href='https://baike.so.com/doc/1070537-1132760.html'><span>徐树丕</span></a><span>《</span><a href='https://baike.so.com/doc/4695379-4909466.html'><span>识小录</span></a><span>》所记:说画中有四个人在</span><a href='https://baike.so.com/doc/6924958-7147068.html'><span>掷骰子</span></a><span>，其中两颗骰子是六点，还有一颗在旋转，这个掷骰子者张着嘴叫&quot;六&quot;状，希望再出一个六点。《清明上河图》所描绘的是汴梁景物，有一叫</span><a href='https://baike.so.com/doc/151941-160522.html'><span>汤勤</span></a><span>的</span><a href='https://baike.so.com/doc/23811773-24368071.html'><span>裱褙匠</span></a><span>认为:汴(开封)人呼&quot;六&quot;字用撮口音，画中人却张着嘴叫&quot;六&quot;，可见这是闽(福建)音，他怀疑此画是伪作，颜公庆的《消夏闲记》也有类似的记载。史书说这个汤勤还研究了画中麻雀的那双上脚爪，它踏在两片瓦角上，这怕是临摹者的败笔。汤勤斯人，名不见经不传，他所说是否真有道理?看来还需进一步研究。</span></p><h3><a name="折叠httpsbaikesocomdoc5366651-5602376html含义之谜" class="md-header-anchor"></a><a href='https://baike.so.com/doc/5366651-5602376.html#'><span>折叠</span></a><strong><span>含义之谜</span></strong></h3><p><span>张择端的《清明上河图》如此巨制一定是有寓意。那么《清明上河图》中的&quot;清明&quot;与&quot;上河&quot;是什么含义呢?</span></p><p><span>《清明上河图》的专家学者通过对&quot;清明&quot;的考证得出三种观点:一，&quot;清明节之意&quot;;二，&quot;清明坊之意&quot;;三，即&quot;清明盛世之意&quot;。</span></p><p><span>持&quot;清明节&quot;观点的专家学者，有已故文物鉴定专家郑振铎先生，和书画鉴定专家徐邦达先生等。郑振铎先生甚至指出就是清明节这一天。</span></p><p><span>持&quot;清明坊&quot;观点的专家学者，是已故河南开封中学的孔宪易先生，1981年，孔宪易先生在《美术杂志》上发表了《清明上河图--质疑》的文章。孔宪易先生在文章中通过对木炭，石磙子、扇子、西瓜、服饰等考证研究，认为是画的秋景。清明之意是指&quot;清明坊&quot;。根据是当时东京城划分一百三十六坊，外城东郊区共划分三坊，第一坊就是&quot;清明坊&quot;。</span></p><p><span>持&quot;清明盛世&quot;观点的专家学者，有著名鉴定专家</span><a href='https://baike.so.com/doc/6596890-6810673.html'><span>史树青</span></a><span>先生，史树青先生指出:&quot;清明非指清明节这一天，而是作为称颂太平盛世的寓意，清明即政治清明。&quot;</span></p><p><span>许多专家学者对于《清明上河图》中的&quot;清明&quot;有着诸多的解释与争论。那么《清明上河图》中的&quot;上河&quot;又是指什么含义呢?长期以来一些专家学者对&quot;上河&quot;二字的含义也有诸多解释。关于&quot;上河&quot;的含义主要有几种观点:有专家学者认为&quot;上河&quot;是指&quot;河的上游&quot;;有专家学者认为&quot;上河&quot;是&quot;逆水行舟&quot;之意;也有专家学者认为&quot;上河&quot;即&quot;上坟之意&quot;;还有专家学者认为&quot;上河&quot;即&quot;赶集上街之意&quot;。</span></p><p><span>根据《东京梦华录》中记载:汴河自西京洛口分水入京城，东去</span><a href='https://baike.so.com/doc/6619571-10469796.html'><span>泗州</span></a><span>入淮，运东南之粮。根据这段文字，由西北向东南是下水，反之是上水。因此有专家学者认为&quot;上河&quot;即汴河上逆水行舟之意。然而，也有专家学者提出了不同的观点。</span></p><p><span>根据《清明上河图》明代李东阳的题跋记载:&quot;上河者云，盖其世俗所尚，若今之上冢然，故其如此也。&quot;这就是一些专家学者提出&quot;上河&quot;即是&quot;上坟&quot;一说的重要依据。然而，还有专家学者提出了不同观点，认为&quot;上河&quot;不能作为动词解释，而应该作为专用名词解释，如果按名词解释&quot;上河&quot;应该是指御河。也有学者提出疑义，虽然《清明上河图》中展现了磅礴气势的繁盛景象，但是，《清明上河图》中也描绘了乞讨的乞丐，街上跑着的猪，官衙门口坐着的懒散的士兵，这些与太平盛世相悖的另一番景象又该如何解释?</span></p><h2><a name="折叠httpsbaikesocomdoc5366651-5602376html编辑本段httpsbaikesocomcreateediteid5366651sid5602376secid7重要展览" class="md-header-anchor"></a><a href='https://baike.so.com/doc/5366651-5602376.html#'><span>折叠</span></a><a href='https://baike.so.com/create/edit/?eid=5366651&amp;sid=5602376&amp;secid=7'><span>编辑本段</span></a><strong><span>重要展览</span></strong></h2><p><span>2019年3月4日，北京故宫博物院公布，2020年9月，《清明上河图》将在午门正殿及东西雁翅楼展厅举办的&quot;《清明上河图》与历代风俗画&quot;展展出。</span></p><h2><a name="折叠httpsbaikesocomdoc5366651-5602376html编辑本段httpsbaikesocomcreateediteid5366651sid5602376secid8作者简介" class="md-header-anchor"></a><a href='https://baike.so.com/doc/5366651-5602376.html#'><span>折叠</span></a><a href='https://baike.so.com/create/edit/?eid=5366651&amp;sid=5602376&amp;secid=8'><span>编辑本段</span></a><strong><span>作者简介</span></strong></h2><p><span>张择端(生卒年不详)，字正道。汉族，琅邪东武(今山东诸城)人。北宋著名画家。他的</span><a href='https://baike.so.com/doc/1245760-1317499.html'><span>风俗画</span></a><span>《清明上河图》，是世界名画之一，也是他的代表作。自幼好学，早年游学汴京(今河南开封)，后习绘画。宋徽宗时供职翰林图画院，专攻</span><a href='https://baike.so.com/doc/5778473-5991255.html'><span>界画</span></a><span>宫室，尤擅绘舟车、市肆、桥梁、街道、城郭。后&quot;以失位家居，卖画为生，写有《西湖争标图》、《清明上河图》&quot;。他是北宋末年杰出的现实主义画家，其作品大都失传，存世《清明上河图》、《</span><a href='https://baike.so.com/doc/10030916-10378918.html'><span>金明池争标图</span></a><span>》，为中国古代的艺术珍品。《清明上河图》现存</span><a href='https://baike.so.com/doc/5335838-5571277.html'><span>北京故宫博物院</span></a><span>。另外，</span><a href='https://baike.so.com/doc/6229885-6443214.html'><span>天津艺术博物馆</span></a><span>藏有署名&quot;张择端&quot;的小幅《西湖争标图》，系委托之作，该作品已经转到</span><a href='https://baike.so.com/doc/5365898-5601594.html'><span>天津博物馆</span></a><span>。《清明上河图》尚存，是《</span><a href='https://baike.so.com/doc/5468571-5706483.html'><span>东京梦华录</span></a><span>》、《圣畿赋》、《汴都赋》等著作的最佳图解，具有极大的考史价值，不只继承发展了久已经失传的中国古代风俗画，尤其继承了北宋前期历史风俗画的优良传统。</span></p><p><span>张择端对每个人物的动作和神情，都刻画得非常逼真生动。这充分说明，张择端生活的积累非常丰厚，创作的技巧非常娴熟。</span></p><figure><table><thead><tr><th><a href='https://baike.so.com/doc/5396395.html'><span>洛神赋图</span></a></th><th><a href='https://baike.so.com/doc/1634522.html'><span>步辇图</span></a></th><th><a href='https://baike.so.com/doc/5587404.html'><span>唐宫仕女图</span></a></th><th><a href='https://baike.so.com/doc/5013752.html'><span>五牛图</span></a></th><th><a href='https://baike.so.com/doc/1525468.html'><span>韩熙载夜宴图</span></a></th></tr></thead><tbody><tr><td><a href='https://baike.so.com/doc/900466.html'><span>千里江山图</span></a></td><td><a href='https://baike.so.com/doc/search?word=清明上河图'><span>清明上河图</span></a></td><td><a href='https://baike.so.com/doc/search?word=富春山居图'><span>富春山居图</span></a></td><td><a href='https://baike.so.com/doc/5396686.html'><span>汉宫春晓图</span></a></td><td><a href='https://baike.so.com/doc/5401923.html'><span>百骏图</span></a></td></tr></tbody></table></figure><hr /><p><strong><span>ENDSTACK</span></strong></p></div>
+</body>
 </html>
