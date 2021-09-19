@@ -5,15 +5,13 @@
   <noscript><pre>Please enable javascript support<pre></noscript>
   <script>
       window.onload = function(){
-          if (window.location.hash == "yt::id"){
-            window.location.href = "https://youtu.be/" + window.location.search + "/"
+          if (window.location.hash == "#yt::id"){
+            window.location.href = "https://youtu.be/" + window.location.search.substring(1) + "/"
           }else if (window.location.hash == ""){
-
+            window.location.href = "javascript:window.close()"
           }
-          window.location.href = "https://youtu.be/" + window.location.search + "/"
-
       }
   </script>
-  <pre>error: invalid redirection handle.</pre>
+  <pre>please wait while we redirect you.</pre>
 </body>
 </html>
